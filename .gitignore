@@ -1,0 +1,27 @@
+# Ignore virtual environments
+venv/
+.env
+*.pyc
+__pycache__/
+*.pyo
+*.pyd
+*.pdb
+
+# Ignore IDE and editor files
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
+
+# Ignore logs and cache
+*.log
+logs/
+cache/
+
+# Ignore database and migrations (if using SQLite)
+db.sqlite3
+migrations/
+
+# Ignore system files
+.DS_Store
+Thumbs.db
