@@ -1,4 +1,6 @@
-﻿from fastapi import FastAPI, HTTPException
+﻿import os
+import uvicorn
+from fastapi import FastAPI, HTTPException
 from pydantic import BaseModel
 from transformers import MarianMTModel, MarianTokenizer
 from fastapi.middleware.cors import CORSMiddleware
@@ -59,5 +61,5 @@ def translate(request: TranslationRequest):
 
 # Run the backend
 if __name__ == "__main__":
-    import uvicorn
-    uvicorn.run(app, host="0.0.0.0", port=5000)
+    port = int(os.getenv("PORT", 8000))  # Get port from environment variable
+    uvicorn.run(app, host="0.0.0.0", port=port)
